@@ -1,0 +1,4 @@
+g4f
+requests
+flask
+flask_cors
