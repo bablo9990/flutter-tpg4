@@ -8,11 +8,12 @@ CORS(app)  # Enable CORS for the entire app
 @app.route('/', methods=['POST'])
 def handle_query():
     data = request.json  # Get JSON data from the request
-    user_input = data.get('input')  # Extract the input field
+    user_input = data.get('input')
+    model_of_ai = data.get("model") # Extract the input field
     client = Client()
     # print(str(user_input))
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model=model_of_ai,
         messages=[{"role": "user", "content": f"{str(user_input)}"}],
     )
     response_data = {
