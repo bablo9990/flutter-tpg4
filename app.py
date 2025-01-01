@@ -13,7 +13,7 @@ def handle_query():
     client = Client()
     # print(str(user_input))
     response = client.chat.completions.create(
-        model=model_of_ai,
+        model=f"{model_of_ai}",
         messages=[{"role": "user", "content": f"{str(user_input)}"}],
     )
     response_data = {
